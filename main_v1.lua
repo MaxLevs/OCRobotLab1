@@ -61,10 +61,8 @@ end
 
 local function dbSet(data)
 	local tbl = dbGet()
-	if tbl then
-		table.insert(tbl, data)
-	else tbl = data
-	end
+	if type(tbl) ~= "table" then tbl={} end
+	table.insert(tbl, data)
 
 	local f, err = io.open("db.txt", "w")
 	if not f then return nil, err end
@@ -85,12 +83,10 @@ local function logSet(x, y, z, r, ... )
 	
 end
 
-dbSet({})
+--dbSet({x=0, y=0, z=0, r=0, 1, 4})
 
-dbSet({x=0, y=0, z=0, r=0, 1, 4})
+--dbSet({x=2, y=0, z=-3, r=2, 1, 4})
 
-dbSet({x=2, y=0, z=-3, r=2, 1, 4})
-
-dbSet({x=0, y=0, z=0, r=0, 1})
+--dbSet({x=0, y=0, z=0, r=0, 1})
 
 print(dbGet())
