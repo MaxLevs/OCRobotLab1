@@ -113,5 +113,5 @@ function table.read(filename)
    return tbl()
 end
 
-table.save({11,22,33,{"gh",'jk'},44},"e:\\1.dat")    -- пишем
-print(table.read("e:\\1.dat"))
+table.save({11,22,33,{"gh",'jk'},44},"db.txt")    -- пишем
+print(table.read("db.txt"))
