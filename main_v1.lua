@@ -85,33 +85,12 @@ local function logSet(x, y, z, r, ... )
 	
 end
 
---dbSet({x=0, y=0, z=0, r=0, 1, 4})
+dbSet({})
 
---dbSet({x=2, y=0, z=-3, r=2, 1, 4})
+dbSet({x=0, y=0, z=0, r=0, 1, 4})
 
---dbSet({x=0, y=0, z=0, r=0, 1})
+dbSet({x=2, y=0, z=-3, r=2, 1, 4})
 
---print(dbGet())
+dbSet({x=0, y=0, z=0, r=0, 1})
 
-function table.save(tbl,filename)
-   local f,err = io.open(filename,"w")
-   if not f then
-      return nil,err
-   end
-   f:write(table.tostring(tbl))
-   f:close()
-   return true
-end
-
-function table.read(filename)
-   local f,err = io.open(filename,"r")
-   if not f then
-      return nil,err
-   end
-   local tbl = assert(load("return " .. f:read()))
-   f:close()
-   return tbl()
-end
-
-table.save({11,22,33,{"gh",'jk'},44},"db.txt")    -- пишем
-print(table.read("db.txt"))
+print(dbGet())
