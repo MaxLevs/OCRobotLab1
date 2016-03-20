@@ -84,3 +84,11 @@ end
 local function logSet(x, y, z, r, ... )
 	
 end
+
+dbSet({x=0, y=0, z=0, r=0, 1, 4})
+
+dbSet({x=2, y=0, z=-3, r=2, 1, 4})
+
+dbSet({x=0, y=0, z=0, r=0, 1})
+
+print(dbGet())
