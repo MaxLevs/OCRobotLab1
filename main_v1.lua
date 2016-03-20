@@ -54,7 +54,7 @@ end
 local function dbGet()
 	local f, err = io.open("db.txt", "r")
 	if not f then return nil, err end
-	--local tbl = assert(loadstring("return " .. f:read("*a")))
+	local tbl = assert(load("return " .. f:read("*a")))
 	f:close()
 	return tbl()
 end
@@ -108,7 +108,7 @@ function table.read(filename)
    if not f then
       return nil,err
    end
-   local tbl = assert(loadstring("return " .. f:read("*a")))
+   local tbl = assert(load("return " .. f:read()))
    f:close()
    return tbl()
 end
