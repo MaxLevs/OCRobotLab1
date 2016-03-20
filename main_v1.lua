@@ -2,7 +2,7 @@
 local component = require("component")
 local computer = require("computer")
 local nav = component.navigation
-local fs = require("filesistem")
+local fs = require("filesystem")
 
 --Основные переменные
 local x,y,z = nav.getPosition()
