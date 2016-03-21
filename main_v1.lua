@@ -109,7 +109,7 @@ f:close()
 print("----------------------------")
 print(" ") 
 
-dbSet({x=3, y=-2, z=14, out={rate numbers}, in={{id, rate_number}, {id, rate_number}, {id, rate_number}}})
+dbSet({x=3, y=-2, z=14, out={1, 2}, in={}})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
@@ -118,7 +118,7 @@ f:close()
 print("----------------------------")
 print(" ")
 
-dbSet({x=2, y=1, z=0, out={rate numbers}, in={{id, rate_number}, {id, rate_number}, {id, rate_number}}})
+dbSet({x=2, y=1, z=0, out={0, 1}, in={{1, 1}}})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
@@ -128,7 +128,7 @@ print("----------------------------")
 print(" ")
 
 
-dbSet({x=0, y=0, z=0, out={rate numbers}, in={{id, rate_number}, {id, rate_number}, {id, rate_number}}})
+dbSet({x=0, y=0, z=0, out={0, 2, 3}, in={{2, 0}}})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
