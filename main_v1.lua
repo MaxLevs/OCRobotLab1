@@ -96,7 +96,8 @@ local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
 print(f:read("*a"))
 f:close()
-
+print("----------------------------")
+print(" ")
 
 dbSet({x=2, y=0, z=-3, r=2, 1, 4})
 
@@ -104,6 +105,8 @@ local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
 print(f:read("*a"))
 f:close()
+print("----------------------------")
+print(" ")
 
 
 dbSet({x=0, y=0, z=0, r=0, 1})
@@ -112,6 +115,8 @@ local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
 print(f:read("*a"))
 f:close()
+print("----------------------------")
+print(" ")
 
 dbReset({x=0, y=0, z=0, r=0, 1})
 
@@ -119,6 +124,8 @@ local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
 print(f:read("*a"))
 f:close()
+print("----------------------------")
+print(" ")
 
 
 dbReset()
@@ -127,4 +134,5 @@ local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
 print(f:read("*a"))
 f:close()
-
+print("----------------------------")
+print(" ")
