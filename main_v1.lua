@@ -111,7 +111,7 @@ f:close()
 print("----------------------------")
 print(" ") 
 
-dbSet({x=0, y=0, z=0, r=0, 1, 4})
+dbSet({x=2, y=-1, z=17, r3, 1, 3})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
@@ -120,7 +120,7 @@ f:close()
 print("----------------------------")
 print(" ")
 
-dbSet({x=2, y=0, z=-3, r=2, 1, 4})
+dbSet({x=2, y=0, z=-3, r=2, 0, 3})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
@@ -130,16 +130,7 @@ print("----------------------------")
 print(" ")
 
 
-dbSet({x=0, y=0, z=0, r=0, 1})
-
-local f, err = io.open("db.txt", "r")
-if not f then return nil, err end
-print(f:read("*a"))
-f:close()
-print("----------------------------")
-print(" ")
-
-dbReset({x=0, y=0, z=0, r=0, 1})
+dbSet({x=0, y=0, z=0, r=0, 1, 2})
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
@@ -152,3 +143,4 @@ local t = checkLocation()
 for i, v in ipairs(t) do
 	print(i, v)
 end
+print (t.r)
