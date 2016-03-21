@@ -44,7 +44,7 @@ function table.tostring( tbl )
 			table.insert( result, table.key_to_str( k ) .. "=" .. table.val_to_str( v ) )
 		end
 	end
-	return "{" .. table.concat( result, "," ) .. "}"
+	return "\n{" .. table.concat( result, "," ) .. "}"
 end
 
 
@@ -78,14 +78,10 @@ local function dbReset(data)
 	end
 	if data then
 		f:write("{" .. table.tostring(data) .. "}")
-	else f:write("{}") 
+	else f:write("{\n}") 
 	end
 	f:close()
 	return true
-end
-
-local function logSet(x, y, z, r, ... )
-	
 end
 
 
@@ -95,6 +91,8 @@ local function checkLocation()
 		if (v.x == x) and (v.y == y) and (v.z == z) then
 			return v
 		end
+
+		--Проверяем на формируем запись в таблицу
 	end
 end
 
@@ -145,4 +143,9 @@ local t = checkLocation()
 for i, v in ipairs(t) do
 	print(i, v)
 end
-print (t.r)
+
+-- Структура DB
+--{
+--	{x=0, y=0, z=0, out={rate numbers}, in={{id, rate_number}, {id, rate_number}, {id, rate_number}}},
+--	{x=1, y=1, z=1, out={rate numbers}, in={{id, rate_number}, {id, rate_number}, {id, rate_number}}}
+--}
