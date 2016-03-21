@@ -92,7 +92,9 @@ end
 local function checkLocation()
 	for k, v in ipairs(dbGet()) do
 		local x,y,z = 0, 0 ,0
-		if (v.x == x) and (v.y == y) and (v.z == z) then print("Нашел!") end
+		if (v.x == x) and (v.y == y) and (v.z == z) then
+			return v
+		end
 	end
 end
 
@@ -146,4 +148,7 @@ f:close()
 print("----------------------------")
 print(" ")
 
-checkLocation()
+local t = checkLocation()
+for i, v in ipairs(t) do
+	print(i, v)
+end
