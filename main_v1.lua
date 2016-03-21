@@ -83,10 +83,28 @@ local function logSet(x, y, z, r, ... )
 	
 end
 
---dbSet({x=0, y=0, z=0, r=0, 1, 4})
 
---dbSet({x=2, y=0, z=-3, r=2, 1, 4})
 
---dbSet({x=0, y=0, z=0, r=0, 1})
+dbSet({x=0, y=0, z=0, r=0, 1, 4})
 
-print(dbGet())
+local f, err = io.open("db.txt", "r")
+if not f then return nil, err end
+print(f:read("*a"))
+f:close()
+
+
+dbSet({x=2, y=0, z=-3, r=2, 1, 4})
+
+local f, err = io.open("db.txt", "r")
+if not f then return nil, err end
+print(f:read("*a"))
+f:close()
+
+
+dbSet({x=0, y=0, z=0, r=0, 1})
+
+local f, err = io.open("db.txt", "r")
+if not f then return nil, err end
+print(f:read("*a"))
+f:close()
+
