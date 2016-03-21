@@ -71,10 +71,15 @@ local function dbSet(data)
 	return true
 end
 
-local function dbSet(data)
+local function dbReset(data)
 	local f, err = io.open("db.txt", "w")
-	if not f then return nil, err end
-	f:write(table.tostring(data))
+	if not f then 
+		return nil, err
+	end
+	if data then
+		f:write("{" .. table.tostring(data) .. "}")
+	else f:write("{}") 
+	end
 	f:close()
 	return true
 end
@@ -102,6 +107,21 @@ f:close()
 
 
 dbSet({x=0, y=0, z=0, r=0, 1})
+
+local f, err = io.open("db.txt", "r")
+if not f then return nil, err end
+print(f:read("*a"))
+f:close()
+
+dbReset({x=0, y=0, z=0, r=0, 1})
+
+local f, err = io.open("db.txt", "r")
+if not f then return nil, err end
+print(f:read("*a"))
+f:close()
+
+
+dbReset()
 
 local f, err = io.open("db.txt", "r")
 if not f then return nil, err end
