@@ -29,7 +29,7 @@ function table.key_to_str ( k )
 	if "string" == type( k ) and string.match( k, "^[_%a][_%a%d]*$" ) then
 		return k
 	end
-	return "[" .. table.val_to_str( k ) .. "]"
+	return "{" .. table.val_to_str( k ) .. "}"
 end
 
 -- Преобразование таблицы или массива в текстовое представление в соответствии с синтаксисом языка lua
