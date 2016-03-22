@@ -149,3 +149,5 @@ end
 --	{x=0, y=0, z=0, out={rate numbers}, inp={{id, rate_number}, {id, rate_number}, {id, rate_number}}},
 --	{x=1, y=1, z=1, out={rate numbers}, inp={{id, rate_number}, {id, rate_number}, {id, rate_number}}}
 --}
+
+--Для теста PUSH из Sublime (вокнул ключ в pageant)
